@@ -1,17 +1,20 @@
 import { observable } from 'mobx';
 
 class AppState {
-  @observable timer = 0;
+  @observable rates = [ createRate('Mr. Green', 10), createRate('Mr. Pink', 15) ];
 
   constructor() {
-    setInterval(() => {
-      this.timer += 1;
-    }, 1000);
+
   }
 
-  resetTimer() {
-    this.timer = 0;
+  resetRates() {
+    this.rates = [createRate('Mr. Green', 0), createRate('Mr. Pink', 0)];
   }
 }
 
+function createRate(who, rate) {
+  return {who: who, rate: rate};
+}
+
 export default AppState;
+
