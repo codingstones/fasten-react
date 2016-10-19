@@ -31,7 +31,6 @@ class App extends Component {
 
   onRateChange = (index, event) => {
     this.props.appState.rates[index].rate = event.target.value;
-    console.log(this.props.appState.rates);
   }
 
 };
